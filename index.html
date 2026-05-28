@@ -1,0 +1,1573 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Animals · Clínica Veterinària · Esparreguera</title>
+<meta name="description" content="Clínica veterinària a Esparreguera. Medicina, cirurgia, comportament. Cuidem animals, acompanyem famílies." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --green:#A0D65A;
+  --green-2:#8AC944;
+  --green-deep:#5E9B26;
+  --green-soft:#EAF6D6;
+  --pink:#F4C9BD;
+  --pink-soft:#FCE7DF;
+  --brown:#5C3A1E;
+  --brown-2:#8A5B33;
+  --cream:#FAF6EE;
+  --paper:#ffffff;
+  --ink:#1A1814;
+  --muted:#6E6A60;
+  --line:#E8E3D6;
+  --radius:18px;
+  --radius-lg:28px;
+  --shadow-sm:0 1px 2px rgba(20,18,10,.05), 0 2px 8px rgba(20,18,10,.04);
+  --shadow:0 10px 30px -10px rgba(20,18,10,.18), 0 2px 6px rgba(20,18,10,.06);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+body{
+  font-family:"Plus Jakarta Sans",system-ui,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  font-size:17px;
+  line-height:1.55;
+  text-wrap:pretty;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+
+/* language toggle visibility */
+html[lang="ca"] [lang="es"]{display:none !important}
+html[lang="es"] [lang="ca"]{display:none !important}
+
+h1,h2,h3,h4{
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  font-weight:700;
+  letter-spacing:-0.02em;
+  line-height:1.02;
+  margin:0;
+}
+h1{font-size:clamp(48px,7vw,104px);font-weight:800;letter-spacing:-0.035em;line-height:.96}
+h2{font-size:clamp(32px,4.4vw,56px);letter-spacing:-0.025em}
+h3{font-size:clamp(22px,2.2vw,28px);letter-spacing:-0.015em}
+p{margin:0}
+
+.container{
+  max-width:1280px;
+  margin:0 auto;
+  padding:0 28px;
+}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(250,246,238,.85);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid transparent;
+  transition:border-color .2s, background .2s;
+}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 0;
+  gap:24px;
+}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-mark{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--green);
+  display:grid;place-items:center;
+  font-family:"Bricolage Grotesque",sans-serif;
+  font-weight:800;font-size:26px;color:#fff;
+  letter-spacing:-.06em;
+  box-shadow:inset 0 -2px 0 rgba(0,0,0,.06);
+}
+.brand-text{display:flex;flex-direction:column;line-height:1}
+.brand-text strong{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:22px;letter-spacing:-.03em}
+.brand-text span{font-size:11px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-top:2px}
+
+.nav-links{display:flex;gap:6px;align-items:center}
+.nav-links a{
+  text-decoration:none;
+  padding:8px 14px;border-radius:999px;
+  font-size:15px;font-weight:500;color:var(--ink);
+  transition:background .15s;
+}
+.nav-links a:hover{background:rgba(0,0,0,.05)}
+
+.nav-right{display:flex;align-items:center;gap:10px}
+.lang{
+  display:inline-flex;background:rgba(0,0,0,.04);border-radius:999px;padding:3px;font-size:13px;font-weight:600;
+}
+.lang button{
+  padding:6px 12px;border-radius:999px;color:var(--muted);
+  transition:background .15s,color .15s;
+}
+.lang button.active{background:var(--paper);color:var(--ink);box-shadow:var(--shadow-sm)}
+
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 18px;border-radius:999px;
+  font-weight:600;font-size:15px;text-decoration:none;
+  transition:transform .12s, box-shadow .12s, background .12s;
+}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 20px -8px rgba(0,0,0,.4)}
+.btn-green{background:var(--green);color:var(--ink)}
+.btn-green:hover{background:var(--green-2);transform:translateY(-1px)}
+.btn-ghost{background:rgba(0,0,0,.04);color:var(--ink)}
+.btn-ghost:hover{background:rgba(0,0,0,.08)}
+
+.menu-toggle{display:none}
+
+/* ---------- HERO ---------- */
+.hero{padding:48px 0 80px;position:relative;overflow:hidden}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:48px;
+  align-items:end;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:7px 14px 7px 10px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:999px;
+  font-size:13px;font-weight:600;color:var(--ink);
+  box-shadow:var(--shadow-sm);
+}
+.status-dot{
+  width:10px;height:10px;border-radius:50%;
+  background:#22c55e;
+  box-shadow:0 0 0 0 rgba(34,197,94,.6);
+  animation:pulse 2.2s infinite;
+}
+.status-dot.closed{background:#f59e0b;animation:none}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}
+  70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}
+  100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}
+}
+.hero h1{margin-top:24px}
+.hero h1 em{
+  font-style:normal;
+  background:var(--green);
+  padding:0 .12em;
+  border-radius:.1em;
+  box-decoration-break:clone;
+  -webkit-box-decoration-break:clone;
+}
+.hero-sub{
+  margin-top:24px;
+  font-size:clamp(17px,1.6vw,20px);
+  color:var(--muted);
+  max-width:46ch;
+}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.hero-cta .btn{padding:14px 22px;font-size:16px}
+
+.hero-visual{
+  position:relative;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  aspect-ratio: 4/5;
+  background:var(--green-soft);
+  box-shadow:var(--shadow);
+}
+.hero-visual img{
+  width:100%;height:100%;object-fit:cover;
+}
+.hero-badge{
+  position:absolute;
+  left:20px;bottom:20px;right:20px;
+  display:flex;align-items:center;gap:14px;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(8px);
+  border-radius:18px;
+  padding:14px 16px;
+}
+.hero-badge .stars{
+  font-family:"Bricolage Grotesque",sans-serif;
+  font-weight:800;font-size:22px;letter-spacing:-.02em;
+}
+.hero-badge .stars b{color:var(--green-deep)}
+.hero-badge .meta{font-size:13px;color:var(--muted);line-height:1.3}
+.hero-badge .meta strong{display:block;color:var(--ink);font-size:14px}
+
+
+/* ---------- TRUST STRIP ---------- */
+.trust{
+  background:var(--brown);
+  color:#fff;
+  padding:28px 0;
+  overflow:hidden;
+}
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+  align-items:center;
+}
+.trust-item{display:flex;flex-direction:column;gap:4px}
+.trust-item .big{
+  font-family:"Bricolage Grotesque",sans-serif;
+  font-weight:700;font-size:32px;letter-spacing:-.02em;line-height:1;
+}
+.trust-item .big .star{color:var(--green)}
+.trust-item .lbl{font-size:13px;color:rgba(255,255,255,.65);letter-spacing:.04em}
+
+/* ---------- ABOUT ---------- */
+.about{padding:120px 0 80px;position:relative;overflow:hidden}
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1.1fr;
+  gap:72px;
+  align-items:center;
+}
+.section-eyebrow{
+  display:inline-block;
+  font-size:12px;font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--green-deep);
+  margin-bottom:18px;
+}
+.about h2{margin-bottom:22px}
+.about h2 .pink{
+  background:var(--pink);
+  padding:0 .14em;
+  border-radius:.1em;
+  box-decoration-break:clone;
+  -webkit-box-decoration-break:clone;
+}
+.about p{color:#3a3833;font-size:18px;margin-bottom:16px;max-width:54ch}
+.about-signature{margin-top:32px;display:flex;align-items:center;gap:18px}
+.about-signature .who{
+  display:flex;gap:-8px;
+}
+.about-signature .who span{
+  width:48px;height:48px;border-radius:50%;
+  background:var(--green-soft);
+  display:grid;place-items:center;
+  font-family:"Bricolage Grotesque",sans-serif;
+  font-weight:700;font-size:18px;color:var(--green-deep);
+  border:3px solid var(--cream);
+  margin-left:-12px;
+}
+.about-signature .who span:first-child{margin-left:0}
+.about-signature .names{font-weight:600}
+.about-signature .names small{display:block;color:var(--muted);font-weight:500;font-size:13px}
+
+.vets-stack{position:relative;height:560px}
+
+/* ---- flip cards ---- */
+.vet-wrapper{
+  position:absolute;width:64%;
+  perspective:1000px;
+  cursor:pointer;
+}
+.vet-wrapper.pilar{left:0;top:0;z-index:2}
+.vet-wrapper.lidia{right:0;bottom:0;z-index:1}
+.vet-wrapper.flipped{z-index:4}
+
+.vet-inner{
+  position:relative;
+  transform-style:preserve-3d;
+  transition:transform .7s cubic-bezier(.4,.2,.2,1);
+  border-radius:var(--radius-lg);
+}
+.vet-wrapper.pilar .vet-inner{transform:rotate(-3deg)}
+.vet-wrapper.lidia .vet-inner{transform:rotate(3deg)}
+.vet-wrapper.pilar.flipped .vet-inner{transform:rotate(-3deg) rotateY(180deg)}
+.vet-wrapper.lidia.flipped .vet-inner{transform:rotate(3deg) rotateY(180deg)}
+
+.vet-front,.vet-back{
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  background:var(--paper);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  position:relative;
+}
+.vet-back{
+  position:absolute;inset:0;
+  transform:rotateY(180deg);
+  display:flex;flex-direction:column;
+  padding:26px 22px;
+  gap:0;
+}
+/* hover hint */
+.vet-wrapper:not(.flipped) .vet-inner::after{
+  content:"";
+  position:absolute;inset:0;border-radius:var(--radius-lg);
+  background:rgba(255,255,255,0);
+  transition:background .2s;
+  pointer-events:none;
+}
+.vet-wrapper:not(.flipped):hover .vet-inner::after{background:rgba(255,255,255,.06)}
+
+/* front face */
+.vet-front .photo{aspect-ratio:4/5;background:var(--green-soft);position:relative;overflow:hidden}
+.vet-front .photo .placeholder{
+  position:absolute;inset:0;display:grid;place-items:center;
+  font-family:"Bricolage Grotesque",sans-serif;
+  font-size:160px;font-weight:800;color:transparent;
+  -webkit-text-stroke:3px rgba(94,155,38,.22);
+  user-select:none;pointer-events:none;
+}
+.vet-front .photo .ph-note{
+  position:absolute;bottom:14px;left:14px;right:14px;
+  font-size:11px;color:rgba(0,0,0,.45);text-align:center;letter-spacing:.05em;
+}
+.vet-front .info{padding:18px 20px;position:relative}
+.vet-front .info strong{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:22px;letter-spacing:-.02em}
+.vet-front .info small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.vet-front .info .flip-cta{
+  position:absolute;top:50%;right:16px;transform:translateY(-50%);
+  width:32px;height:32px;border-radius:50%;
+  background:var(--green-soft);
+  display:grid;place-items:center;
+  color:var(--green-deep);
+  font-size:15px;
+}
+
+/* back face content */
+.vet-back-name{
+  font-family:"Bricolage Grotesque",sans-serif;
+  font-weight:800;font-size:28px;letter-spacing:-.03em;
+  margin-bottom:2px;
+}
+.vet-back-role{
+  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--green-deep);margin-bottom:18px;
+}
+.vet-back-divider{height:1px;background:var(--line);margin-bottom:16px}
+.vet-formation{
+  list-style:none;margin:0;padding:0;
+  display:flex;flex-direction:column;gap:13px;flex:1;
+}
+.vet-formation li{display:flex;flex-direction:column;gap:1px}
+.vet-formation .flabel{
+  font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--green-deep);
+}
+.vet-formation .fval{font-size:13px;font-weight:500;color:var(--ink);line-height:1.35}
+.vet-back-close{
+  margin-top:auto;padding-top:14px;
+  font-size:11px;color:var(--muted);
+  display:flex;align-items:center;gap:6px;
+  letter-spacing:.04em;
+}
+
+/* ---------- SERVICES ---------- */
+.services{padding:80px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.services-head{
+  display:flex;justify-content:space-between;align-items:end;
+  margin-bottom:48px;flex-wrap:wrap;gap:24px;
+}
+.services-head h2{max-width:18ch}
+.services-head p{color:var(--muted);max-width:36ch}
+.svc-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.svc{
+  background:var(--cream);
+  border-radius:var(--radius);
+  padding:28px;
+  display:flex;flex-direction:column;gap:14px;
+  transition:transform .2s, box-shadow .2s;
+  border:1px solid transparent;
+}
+.svc:hover{transform:translateY(-3px);border-color:var(--line);box-shadow:var(--shadow-sm)}
+.svc-icon{
+  width:48px;height:48px;border-radius:14px;
+  background:var(--green);
+  display:grid;place-items:center;
+}
+.svc-icon svg{width:24px;height:24px;color:var(--ink)}
+.svc:nth-child(2) .svc-icon{background:var(--pink)}
+.svc:nth-child(3) .svc-icon{background:var(--brown);color:#fff}
+.svc:nth-child(3) .svc-icon svg{color:#fff}
+.svc:nth-child(4) .svc-icon{background:var(--pink-soft)}
+.svc:nth-child(5) .svc-icon{background:var(--green-soft)}
+.svc:nth-child(6) .svc-icon{background:var(--ink);color:#fff}
+.svc:nth-child(6) .svc-icon svg{color:#fff}
+.svc h3{font-size:21px}
+.svc p{color:var(--muted);font-size:15px}
+
+/* --- tarjeta destacada --- */
+.svc--featured{
+  background:linear-gradient(135deg,var(--green-soft) 0%,var(--cream) 100%);
+  border-color:rgba(160,214,90,.4);
+}
+.svc--featured .svc-icon{width:56px;height:56px;border-radius:16px}
+
+/* ---------- GALLERY ---------- */
+.gallery{padding:120px 0 80px}
+.gallery-head{margin-bottom:42px;max-width:32rem}
+.gallery h2 .green{
+  background:var(--green);padding:0 .14em;border-radius:.1em;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone;
+}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  grid-auto-rows:140px;
+  gap:14px;
+}
+.gallery-grid figure{
+  margin:0;
+  position:relative;
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:var(--green-soft);
+}
+.gallery-grid figure img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .8s ease;
+}
+.gallery-grid figure:hover img{transform:scale(1.04)}
+.gallery-grid figcaption{
+  position:absolute;bottom:12px;left:12px;
+  background:rgba(255,255,255,.96);
+  padding:6px 12px;border-radius:999px;
+  font-size:12px;font-weight:600;
+}
+.g1{grid-column:span 4;grid-row:span 3}
+.g2{grid-column:span 2;grid-row:span 2}
+.g3{grid-column:span 2;grid-row:span 1}
+.g4{grid-column:span 3;grid-row:span 2}
+.g5{grid-column:span 3;grid-row:span 2}
+
+/* --- tile de reviews en galería --- */
+.gallery-quote{
+  background:linear-gradient(145deg, var(--green-deep) 0%, #3d7018 100%)!important;
+  display:block!important;
+  padding:0;
+  cursor:default;
+  overflow:hidden;
+}
+/* círculo decorativo de fondo */
+.gallery-quote::after{
+  content:"";
+  position:absolute;
+  width:140px;height:140px;border-radius:50%;
+  background:rgba(255,255,255,.07);
+  bottom:-40px;right:-30px;
+  pointer-events:none;
+}
+.gq-slides{position:absolute;inset:0}
+.gq-slide{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:20px 22px;
+  opacity:0;
+  transition:opacity .7s ease;
+}
+.gq-slide.active{opacity:1}
+.gq-slide blockquote{margin:0}
+.gq-slide blockquote p{
+  font-family:"Bricolage Grotesque",sans-serif;
+  font-weight:700;font-size:14px;line-height:1.45;
+  color:#fff;margin:0 0 8px;
+}
+.gq-slide cite{font-size:12px;color:rgba(255,255,255,.7);font-style:normal}
+.gallery-quote:hover img{transform:none!important}
+.gq-dots{
+  position:absolute;bottom:10px;left:22px;
+  display:flex;gap:5px;
+}
+.gq-dot{
+  width:5px;height:5px;border-radius:50%;
+  background:rgba(255,255,255,.3);
+  transition:background .3s;
+}
+.gq-dot.active{background:rgba(255,255,255,.85)}
+
+/* ---------- SCHEDULE ---------- */
+.schedule{padding:80px 0;background:var(--green);position:relative;overflow:hidden}
+.schedule::before{
+  content:"";position:absolute;
+  width:600px;height:600px;border-radius:50%;
+  background:rgba(255,255,255,.12);
+  top:-200px;right:-200px;
+}
+.schedule-grid{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:64px;
+  align-items:center;
+  position:relative;
+}
+.schedule h2{color:var(--ink);margin-bottom:18px}
+.schedule .section-eyebrow{color:var(--green-deep)}
+.schedule p{color:#2a2820;max-width:36ch;margin-bottom:24px}
+.live-status{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:10px 16px;
+  background:var(--ink);color:#fff;
+  border-radius:999px;font-weight:600;font-size:15px;
+}
+.live-status .status-dot{background:#22c55e}
+.live-status.closed .status-dot{background:#f59e0b}
+.live-status small{font-weight:500;opacity:.7;font-size:13px;margin-left:4px}
+
+.hours-table{
+  background:var(--paper);
+  border-radius:var(--radius-lg);
+  padding:10px;
+  box-shadow:var(--shadow);
+}
+.hours-row{
+  display:grid;
+  grid-template-columns:1.1fr 1fr 1fr;
+  gap:8px;
+  padding:4px;
+  align-items:center;
+}
+.hours-row.head{
+  padding:8px 4px;
+  font-family:"Bricolage Grotesque",sans-serif;
+  font-weight:700;
+  font-size:14px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--brown);
+}
+.hours-row.head .day{visibility:hidden}
+.hours-row.head .slot{
+  background:var(--pink);text-align:center;border-radius:10px;padding:8px;
+}
+.hours-row .day{
+  font-family:"Bricolage Grotesque",sans-serif;
+  font-weight:700;font-size:15px;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--brown);
+  padding-left:14px;
+}
+.hours-row .slot{
+  background:var(--cream);
+  text-align:center;
+  padding:14px 8px;
+  border-radius:10px;
+  font-weight:600;
+  font-variant-numeric:tabular-nums;
+  font-size:15px;
+  color:var(--brown);
+  position:relative;
+}
+.hours-row .slot.closed{color:var(--green-deep);font-weight:500;font-style:italic}
+.hours-row.today .slot{background:var(--pink-soft);outline:2px solid var(--pink)}
+.hours-row.today .slot.now{background:var(--green);color:var(--ink);outline:2px solid var(--green-deep)}
+.hours-row.today .day{color:var(--ink)}
+.hours-row.today .day::before{
+  content:"";display:inline-block;width:6px;height:6px;border-radius:50%;
+  background:var(--ink);margin-right:8px;vertical-align:middle;
+}
+
+/* ---------- CONTACT ---------- */
+.contact{padding:120px 0 80px}
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:48px;
+}
+.contact h2{margin-bottom:24px}
+.contact-list{display:flex;flex-direction:column;gap:18px;margin:32px 0}
+.contact-item{display:flex;gap:16px;align-items:flex-start;text-decoration:none;color:inherit}
+.contact-item:hover .ci-label{color:var(--green-deep)}
+.ci-icon{
+  width:46px;height:46px;border-radius:14px;
+  background:var(--green-soft);
+  display:grid;place-items:center;
+  flex-shrink:0;
+}
+.ci-icon svg{width:22px;height:22px;color:var(--green-deep)}
+.ci-text small{display:block;font-size:12px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+.ci-label{font-weight:600;font-size:18px;transition:color .15s}
+.ci-text span{display:block;font-size:14px;color:var(--muted);margin-top:2px}
+
+.map-card{
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  position:relative;
+  background:var(--paper);
+  min-height:460px;
+}
+.map-card iframe{width:100%;height:100%;min-height:460px;border:0;display:block}
+.map-card .pin-overlay{
+  position:absolute;left:24px;bottom:24px;right:24px;
+  background:rgba(255,255,255,.97);
+  padding:18px 22px;
+  border-radius:18px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;flex-wrap:wrap;
+  pointer-events:none;
+}
+.map-card .pin-overlay strong{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:18px}
+.map-card .pin-overlay small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.map-card .pin-overlay .btn{pointer-events:auto;background:var(--ink);color:#fff;padding:10px 16px;font-size:14px}
+
+/* ---------- CTA ---------- */
+.cta-band{
+  margin:0 0 80px;
+}
+.cta-band-inner{
+  background:var(--ink);
+  color:#fff;
+  border-radius:var(--radius-lg);
+  padding:64px 56px;
+  display:flex;justify-content:space-between;align-items:center;gap:32px;
+  position:relative;overflow:hidden;
+}
+.cta-band-inner::after{
+  content:"";position:absolute;
+  width:260px;height:260px;border-radius:50%;
+  background:var(--green);opacity:.18;
+  right:-80px;top:-80px;
+}
+.cta-band h2{font-size:clamp(28px,3.4vw,46px);max-width:18ch}
+.cta-band .btn-green{padding:16px 26px;font-size:17px;font-weight:700}
+
+/* ---------- FOOTER ---------- */
+footer{padding:48px 0 36px;border-top:1px solid var(--line)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.footer-inner small{color:var(--muted);font-size:13px}
+.footer-links{display:flex;gap:18px}
+.footer-links a{font-size:14px;text-decoration:none;color:var(--muted)}
+.footer-links a:hover{color:var(--ink)}
+
+/* ---------- RESPONSIVE ---------- */
+/* nav hamburger: se activa antes que el colapso de layouts para evitar
+   que los links queden apretados en tablets y pantallas intermedias */
+@media (max-width: 1080px){
+  .nav-links{display:none}
+  .nav-links.open{
+    display:flex;flex-direction:column;gap:2px;
+    position:absolute;top:100%;left:0;right:0;
+    background:rgba(250,246,238,.97);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+    padding:8px 20px 20px;
+    box-shadow:0 8px 24px -8px rgba(0,0,0,.1);
+  }
+  .nav-links.open a{padding:13px 16px;border-radius:12px;font-size:16px;display:block}
+  .menu-toggle{display:inline-flex;width:42px;height:42px;border-radius:50%;background:rgba(0,0,0,.05);align-items:center;justify-content:center}
+  .nav .btn-primary{display:none}
+}
+@media (max-width: 940px){
+  .hero-grid,.about-grid,.services-head,.gallery-grid,.schedule-grid,.contact-grid,.cta-band-inner,.trust-grid{grid-template-columns:1fr !important;display:block !important}
+  .trust-grid{display:grid !important;grid-template-columns:repeat(2,1fr) !important}
+  .hero-visual{margin-top:48px;aspect-ratio:1/1}
+  .vets-stack{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}
+  .vet-wrapper{position:relative !important;width:100% !important;perspective:none}
+  .vet-wrapper.pilar .vet-inner,.vet-wrapper.lidia .vet-inner{transform:none !important}
+  .vet-wrapper.pilar.flipped .vet-inner,.vet-wrapper.lidia.flipped .vet-inner{transform:rotateY(180deg) !important}
+  .vet-wrapper.pilar:not(.flipped) .vet-inner{animation:none}
+  .tap-hint{display:block}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .gallery-grid{display:grid !important;grid-template-columns:repeat(2,1fr) !important}
+  .g1,.g2,.g3,.g4,.g5{grid-column:span 1;grid-row:span 1;aspect-ratio:1/1;height:auto}
+  .gallery-grid{grid-auto-rows:auto}
+  .cta-band-inner{flex-direction:column;text-align:center;padding:40px 28px}
+  .container{padding:0 20px}
+  .about{padding:64px 0}
+  .gallery,.contact{padding:64px 0}
+  body{font-size:16px}
+}
+@media (max-width: 560px){
+  .svc-grid{grid-template-columns:1fr}
+  .vets-stack{grid-template-columns:1fr}
+  .hours-row{grid-template-columns:1fr 1fr 1fr;gap:6px}
+  .hours-row .day{padding-left:6px;font-size:13px}
+  .hours-row .slot{padding:10px 4px;font-size:13px}
+  .trust-grid{grid-template-columns:1fr 1fr;gap:18px}
+  .trust-item .big{font-size:24px}
+  .map-card .pin-overlay{flex-direction:column;align-items:flex-start}
+  .gallery-quote{aspect-ratio:auto!important;min-height:100px}
+}
+
+/* ---------- FOOTER ---------- */
+footer{padding:48px 0 32px;border-top:1px solid var(--line)}
+.footer-top{
+  display:grid;
+  grid-template-columns:1.6fr 1fr 1fr;
+  gap:40px;
+  padding-bottom:28px;
+  border-bottom:1px solid var(--line);
+  margin-bottom:20px;
+  align-items:start;
+}
+.footer-tagline{color:var(--muted);font-size:14px;margin-top:10px;max-width:24ch;line-height:1.5}
+.footer-section-label{
+  display:block;
+  font-size:11px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--green-deep);
+  margin-bottom:10px;
+}
+.footer-col{display:flex;flex-direction:column;gap:8px}
+.footer-col a{font-size:14px;text-decoration:none;color:var(--muted);transition:color .15s}
+.footer-col a:hover{color:var(--ink)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.footer-bottom small{color:var(--muted);font-size:13px}
+
+/* tablet: brand ocupa fila completa, contacto y nav debajo en 2 cols */
+@media(max-width:768px){
+  .footer-top{
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+  }
+  .footer-top>div:first-child{grid-column:span 2}
+}
+
+/* móvil: footer compacto y coherente */
+@media(max-width:560px){
+  footer{padding:28px 0 20px}
+  .footer-top{
+    grid-template-columns:1fr;
+    gap:16px;
+    padding-bottom:16px;
+  }
+  .footer-top>div:first-child{grid-column:span 1}
+  /* tagline ya visible en el hero, no hace falta repetirla */
+  .footer-tagline{display:none}
+  .footer-section-label{display:none}
+  /* contacto más compacto */
+  .footer-col{gap:5px}
+  .footer-col a{font-size:13px}
+  /* nav: botones ghost en fila */
+  .footer-col:last-child{
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:6px;
+  }
+  .footer-col:last-child a{
+    font-size:13px;
+    padding:7px 14px;
+    background:transparent;
+    border:1px solid var(--line);
+    border-radius:999px;
+    color:var(--muted);
+  }
+  /* footer bottom: solo copyright, sin el nombre del colegio */
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:3px}
+  .footer-bottom small:last-child{display:none}
+}
+
+/* ---------- FOCUS VISIBLE ---------- */
+:focus-visible{
+  outline:3px solid var(--green-deep);
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+/* ---------- SCROLL REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* --- flip hint: ciclo de 9s — gira ~2.5s, pausa ~6.5s, repite --- */
+@keyframes flip-hint{
+  0%  {transform:rotate(-3deg)}
+  12% {transform:rotate(-3deg) rotateY(38deg)}
+  20% {transform:rotate(-3deg) rotateY(-6deg)}
+  26% {transform:rotate(-3deg) rotateY(14deg)}
+  32% {transform:rotate(-3deg)}
+  100%{transform:rotate(-3deg)}
+}
+.vet-wrapper.pilar:not(.flipped):not(.hint-done) .vet-inner{
+  animation:flip-hint 9s ease 2.2s infinite;
+}
+
+/* chip "Toca'm / Tócame" — solo visible en responsive */
+.tap-hint{
+  display:none;
+  position:absolute;
+  bottom:68px; /* justo encima del bloque .info */
+  left:50%;
+  transform:translateX(-50%);
+  white-space:nowrap;
+  font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--green-deep);
+  background:var(--green-soft);
+  padding:5px 12px;border-radius:999px;
+  z-index:3;
+  pointer-events:none;
+}
+
+/* ---------- PREFERS REDUCED MOTION ---------- */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .vet-wrapper.pilar:not(.flipped) .vet-inner{animation:none}
+}
+
+/* ---------- MOBILE FIXES ---------- */
+@media(max-width:940px){
+  /* secciones: reducir padding vertical (schedule y services no tenían regla) */
+  .schedule{padding:48px 0}
+  .services{padding:48px 0}
+
+  /* horarios: recuperar la separación que perdía el gap del grid al colapsar */
+  #hoursTable{margin-top:32px}
+
+  /* mapa: 460px de altura es demasiado en móvil */
+  .map-card,.map-card iframe{min-height:280px}
+
+  /* cta band: display:block !important anula el gap del flex, lo restauramos */
+  .cta-band-inner{display:flex !important;flex-direction:column;align-items:center;gap:28px}
+}
+@media(max-width:560px){
+  /* hero: botones CTA en columna en pantallas muy pequeñas */
+  .hero-cta{flex-direction:column}
+  .hero-cta .btn{justify-content:center}
+
+  /* trust strip: "Medicina + Conducta" puede romperse, ajuste fino */
+  .trust-item .big{font-size:20px;line-height:1.2}
+}
+</style>
+</head>
+<body>
+
+<!-- ============= NAV ============= -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand">
+      <div class="brand-mark">A</div>
+      <div class="brand-text">
+        <strong>animals</strong>
+        <span lang="ca">clínica veterinària</span>
+        <span lang="es">clínica veterinaria</span>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="#sobre"><span lang="ca">Sobre nosaltres</span><span lang="es">Nosotras</span></a>
+      <a href="#serveis"><span lang="ca">Serveis</span><span lang="es">Servicios</span></a>
+      <a href="#instal"><span lang="ca">Instal·lacions</span><span lang="es">Instalaciones</span></a>
+      <a href="#horari"><span lang="ca">Horari</span><span lang="es">Horario</span></a>
+      <a href="#contacte"><span lang="ca">Contacte</span><span lang="es">Contacto</span></a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="tablist" aria-label="Idioma">
+        <button class="active" data-lang="ca">CA</button>
+        <button data-lang="es">ES</button>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menú" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+        </svg>
+      </button>
+      <a href="tel:+34618358982" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        618 35 89 82
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============= HERO ============= -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="hero-eyebrow">
+          <span class="status-dot" id="heroDot"></span>
+          <span id="heroStatus">
+            <span lang="ca">Oberts ara · Esparreguera</span>
+            <span lang="es">Abiertos ahora · Esparraguera</span>
+          </span>
+        </span>
+        <h1>
+          <span lang="ca">Cuidem <em>animals</em>,<br/>acompanyem famílies.</span>
+          <span lang="es">Cuidamos <em>animales</em>,<br/>acompañamos familias.</span>
+        </h1>
+        <p class="hero-sub">
+          <span lang="ca">Medicina veterinària amb temps per escoltar. Som la Pilar i la Lidia, i fa més d'una dècada que cuidem la teva mascota com si fos nostra, al centre d'Esparreguera.</span>
+          <span lang="es">Medicina veterinaria con tiempo para escucharte. Somos Pilar y Lidia, y desde hace más de una década cuidamos a tu mascota como si fuera nuestra, en el centro de Esparraguera.</span>
+        </p>
+        <div class="hero-cta">
+          <a href="tel:+34618358982" class="btn btn-green">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span lang="ca">Demanar visita</span><span lang="es">Pedir visita</span>
+          </a>
+          <a href="#contacte" class="btn btn-ghost">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span lang="ca">Com arribar</span><span lang="es">Cómo llegar</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img src="assets/recepcio.png" alt="Recepció Animals Clínica Veterinària" />
+        <div class="hero-badge">
+          <div class="stars"><b>4,6</b> ★★★★★</div>
+          <div class="meta">
+            <strong>130 <span lang="ca">ressenyes</span><span lang="es">reseñas</span></strong>
+            <span lang="ca">a Google · Esparreguera</span>
+            <span lang="es">en Google · Esparraguera</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= TRUST STRIP ============= -->
+<section class="trust">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="big">4,6<span class="star">★</span></div>
+        <div class="lbl"><span lang="ca">130 ressenyes a Google</span><span lang="es">130 reseñas en Google</span></div>
+      </div>
+      <div class="trust-item">
+        <div class="big">600+</div>
+        <div class="lbl"><span lang="ca">famílies a Instagram</span><span lang="es">familias en Instagram</span></div>
+      </div>
+      <div class="trust-item">
+        <div class="big">2</div>
+        <div class="lbl"><span lang="ca">veterinàries titulars: Pilar &amp; Lidia</span><span lang="es">veterinarias titulares: Pilar y Lidia</span></div>
+      </div>
+      <div class="trust-item">
+        <div class="big"><span lang="ca">Medicina + Conducta</span><span lang="es">Medicina + Conducta</span></div>
+        <div class="lbl"><span lang="ca">perquè curar és escoltar</span><span lang="es">porque curar es escuchar</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= ABOUT ============= -->
+<section class="about" id="sobre">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <span class="section-eyebrow"><span lang="ca">Sobre nosaltres</span><span lang="es">Sobre nosotras</span></span>
+        <h2>
+          <span lang="ca">Som la <span class="pink">Pilar</span> i la <span class="pink">Lidia</span>.</span>
+          <span lang="es">Somos <span class="pink">Pilar</span> y <span class="pink">Lidia</span>.</span>
+        </h2>
+        <p>
+          <span lang="ca">Vam obrir Animals amb una idea ben senzilla: tractar cada gos, gat o conill que entra per la porta com tractaríem el nostre. Sense presses, mirant-los als ulls, parlant clar amb les famílies.</span>
+          <span lang="es">Abrimos Animals con una idea sencilla: tratar a cada perro, gato o conejo que entra por la puerta como trataríamos al nuestro. Sin prisas, mirándolos a los ojos, hablando claro con las familias.</span>
+        </p>
+        <p>
+          <span lang="ca">A banda de la medicina general i la cirurgia, ens hem especialitzat en <strong>medicina del comportament</strong>: una mascota tranquil·la a casa és una mascota més sana. I en molts casos, canvia-ho tot.</span>
+          <span lang="es">Además de medicina general y cirugía, nos hemos especializado en <strong>medicina del comportamiento</strong>: una mascota tranquila en casa es una mascota más sana. Y en muchos casos, lo cambia todo.</span>
+        </p>
+        <div class="about-signature">
+          <div class="who">
+            <span>P</span>
+            <span>L</span>
+          </div>
+          <div class="names">
+            Pilar &amp; Lidia
+            <small><span lang="ca">Veterinàries titulars · Col. núm. en sol·licitud</span><span lang="es">Veterinarias titulares · Col. núm. en trámite</span></small>
+          </div>
+        </div>
+      </div>
+
+      <div class="vets-stack">
+
+        <!-- PILAR — z-index:2, queda al frente -->
+        <div class="vet-wrapper pilar">
+          <div class="vet-inner">
+            <!-- cara A: foto -->
+            <div class="vet-front">
+              <div class="photo">
+                <div class="placeholder">P</div>
+                <div class="ph-note"><span lang="ca">[ Foto pendent ]</span><span lang="es">[ Foto pendiente ]</span></div>
+              </div>
+              <div class="info">
+                <strong>Pilar</strong>
+                <small><span lang="ca">Medicina interna i cirurgia</span><span lang="es">Medicina interna y cirugía</span></small>
+                <div class="flip-cta" aria-hidden="true">↩</div>
+              </div>
+              <div class="tap-hint"><span lang="ca">Toca'm</span><span lang="es">Tócame</span></div>
+            </div>
+            <!-- cara B: formació -->
+            <div class="vet-back">
+              <div class="vet-back-name">Pilar</div>
+              <div class="vet-back-role"><span lang="ca">Medicina interna i cirurgia</span><span lang="es">Medicina interna y cirugía</span></div>
+              <div class="vet-back-divider"></div>
+              <ul class="vet-formation">
+                <li>
+                  <span class="flabel"><span lang="ca">Formació</span><span lang="es">Formación</span></span>
+                  <span class="fval">[ <span lang="ca">Llicenciatura / Grau en Veterinàries</span><span lang="es">Licenciatura / Grado en Veterinaria</span> ]</span>
+                </li>
+                <li>
+                  <span class="flabel"><span lang="ca">Especialitat</span><span lang="es">Especialidad</span></span>
+                  <span class="fval">[ <span lang="ca">Afegeix especialitat o curs</span><span lang="es">Añade especialidad o curso</span> ]</span>
+                </li>
+                <li>
+                  <span class="flabel"><span lang="ca">Trajectòria</span><span lang="es">Trayectoria</span></span>
+                  <span class="fval">[ <span lang="ca">Anys d'experiència i clínica</span><span lang="es">Años de experiencia y clínica</span> ]</span>
+                </li>
+                <li>
+                  <span class="flabel"><span lang="ca">Sobre mi</span><span lang="es">Sobre mí</span></span>
+                  <span class="fval">[ <span lang="ca">Afegeix un detall personal</span><span lang="es">Añade un detalle personal</span> ]</span>
+                </li>
+              </ul>
+              <div class="vet-back-close">
+                <span>↩</span>
+                <span><span lang="ca">Toca per tornar</span><span lang="es">Toca para volver</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LIDIA — z-index:1, queda al fondo -->
+        <div class="vet-wrapper lidia">
+          <div class="vet-inner">
+            <!-- cara A: foto -->
+            <div class="vet-front">
+              <div class="photo">
+                <div class="placeholder">L</div>
+                <div class="ph-note"><span lang="ca">[ Foto pendent ]</span><span lang="es">[ Foto pendiente ]</span></div>
+              </div>
+              <div class="info">
+                <strong>Lidia</strong>
+                <small><span lang="ca">Medicina i comportament</span><span lang="es">Medicina y comportamiento</span></small>
+                <div class="flip-cta" aria-hidden="true">↩</div>
+              </div>
+            </div>
+            <!-- cara B: formació -->
+            <div class="vet-back">
+              <div class="vet-back-name">Lidia</div>
+              <div class="vet-back-role"><span lang="ca">Medicina i comportament</span><span lang="es">Medicina y comportamiento</span></div>
+              <div class="vet-back-divider"></div>
+              <ul class="vet-formation">
+                <li>
+                  <span class="flabel"><span lang="ca">Formació</span><span lang="es">Formación</span></span>
+                  <span class="fval">[ <span lang="ca">Llicenciatura / Grau en Veterinàries</span><span lang="es">Licenciatura / Grado en Veterinaria</span> ]</span>
+                </li>
+                <li>
+                  <span class="flabel"><span lang="ca">Especialitat</span><span lang="es">Especialidad</span></span>
+                  <span class="fval">[ <span lang="ca">Etologia i comportament animal</span><span lang="es">Etología y comportamiento animal</span> ]</span>
+                </li>
+                <li>
+                  <span class="flabel"><span lang="ca">Trajectòria</span><span lang="es">Trayectoria</span></span>
+                  <span class="fval">[ <span lang="ca">Anys d'experiència i clínica</span><span lang="es">Años de experiencia y clínica</span> ]</span>
+                </li>
+                <li>
+                  <span class="flabel"><span lang="ca">Sobre mi</span><span lang="es">Sobre mí</span></span>
+                  <span class="fval">[ <span lang="ca">Afegeix un detall personal</span><span lang="es">Añade un detalle personal</span> ]</span>
+                </li>
+              </ul>
+              <div class="vet-back-close">
+                <span>↩</span>
+                <span><span lang="ca">Toca per tornar</span><span lang="es">Toca para volver</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= SERVICES ============= -->
+<section class="services" id="serveis">
+  <div class="container">
+    <div class="services-head">
+      <div>
+        <span class="section-eyebrow"><span lang="ca">Serveis</span><span lang="es">Servicios</span></span>
+        <h2>
+          <span lang="ca">Tot el que necessita,<br/>sota un mateix sostre.</span>
+          <span lang="es">Todo lo que necesita,<br/>bajo un mismo techo.</span>
+        </h2>
+      </div>
+      <p>
+        <span lang="ca">Des de la primera vacuna fins a la cirurgia més complexa. Si en algun moment necessitem un especialista, treballem amb una xarxa de centres de referència de tot Catalunya.</span>
+        <span lang="es">Desde la primera vacuna hasta la cirugía más compleja. Si en algún momento necesitamos un especialista, trabajamos con una red de centros de referencia de toda Cataluña.</span>
+      </p>
+    </div>
+
+    <div class="svc-grid">
+      <div class="svc svc--featured">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg></div>
+        <h3><span lang="ca">Medicina general</span><span lang="es">Medicina general</span></h3>
+        <p><span lang="ca">Revisions, vacunes, desparasitació interna i externa, geriatria i seguiment de malalties cròniques.</span><span lang="es">Revisiones, vacunas, desparasitación interna y externa, geriatría y seguimiento de enfermedades crónicas.</span></p>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8"/><path d="M9 6h6"/><path d="M5 22h14a2 2 0 0 0 2-2V12a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2z"/><path d="M9 16h6"/></svg></div>
+        <h3><span lang="ca">Cirurgia</span><span lang="es">Cirugía</span></h3>
+        <p><span lang="ca">Quiròfan equipat amb anestèsia inhalatòria i monitorització multiparamètrica. Cirurgia de teixits tous i esterilitzacions.</span><span lang="es">Quirófano equipado con anestesia inhalatoria y monitorización multiparamétrica. Cirugía de tejidos blandos y esterilizaciones.</span></p>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 10v6m11-11h-6M7 12H1m17.36-7.36-4.24 4.24M9.88 14.12l-4.24 4.24m12.72 0-4.24-4.24M9.88 9.88 5.64 5.64"/></svg></div>
+        <h3><span lang="ca">Comportament</span><span lang="es">Comportamiento</span></h3>
+        <p><span lang="ca">Por, ansietat, agressivitat, problemes de convivència. Treballem amb tu i la teva mascota, pas a pas.</span><span lang="es">Miedo, ansiedad, agresividad, problemas de convivencia. Trabajamos contigo y tu mascota, paso a paso.</span></p>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v8.31L2 22h20L14 10.31V2"/><path d="M7 2h10"/></svg></div>
+        <h3><span lang="ca">Laboratori propi</span><span lang="es">Laboratorio propio</span></h3>
+        <p><span lang="ca">Analítiques de sang, urina i citologies amb resultats en pocs minuts. Diagnòstic ràpid quan més importa.</span><span lang="es">Analíticas de sangre, orina y citologías con resultados en pocos minutos. Diagnóstico rápido cuando más importa.</span></p>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10z"/></svg></div>
+        <h3><span lang="ca">Esterilització</span><span lang="es">Esterilización</span></h3>
+        <p><span lang="ca">Campanyes amb descomptes durant tot l'any per a gats, gosses i conills. Consulta'ns sense compromís.</span><span lang="es">Campañas con descuentos durante todo el año para gatos, perras y conejos. Consúltanos sin compromiso.</span></p>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 4v16"/></svg></div>
+        <h3><span lang="ca">Identificació i passaport</span><span lang="es">Identificación y pasaporte</span></h3>
+        <p><span lang="ca">Xip, registre AIAC, passaport europeu i certificats per viatjar. T'ho gestionem nosaltres.</span><span lang="es">Chip, registro AIAC, pasaporte europeo y certificados para viajar. Te lo gestionamos nosotras.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= GALLERY ============= -->
+<section class="gallery" id="instal">
+  <div class="container">
+    <div class="gallery-head">
+      <span class="section-eyebrow"><span lang="ca">Instal·lacions</span><span lang="es">Instalaciones</span></span>
+      <h2>
+        <span lang="ca">Una clínica <span class="green">lluminosa</span>, neta i pensada per a ells.</span>
+        <span lang="es">Una clínica <span class="green">luminosa</span>, limpia y pensada para ellos.</span>
+      </h2>
+    </div>
+
+    <div class="gallery-grid">
+      <figure class="g1">
+        <img src="assets/recepcio.png" alt="Recepció" />
+        <figcaption><span lang="ca">Recepció &amp; botiga</span><span lang="es">Recepción y tienda</span></figcaption>
+      </figure>
+      <figure class="g2">
+        <img src="assets/quirofan.png" alt="Quiròfan" />
+        <figcaption><span lang="ca">Quiròfan</span><span lang="es">Quirófano</span></figcaption>
+      </figure>
+      <figure class="g3 gallery-quote" aria-label="Valoracions de clients">
+        <div class="gq-slides">
+          <div class="gq-slide active">
+            <blockquote>
+              <p>"Con Pilar el trato es increíble. Es muy buena veterinaria, le encantan los animales y eso se nota."</p>
+              <cite>— Sandra C. · Local Guide</cite>
+            </blockquote>
+          </div>
+          <div class="gq-slide">
+            <blockquote>
+              <p>"Excelente atención, precio sostenible y te atienden tu mascota como si fueran la de ellos."</p>
+              <cite>— Juan A. G.</cite>
+            </blockquote>
+          </div>
+          <div class="gq-slide">
+            <blockquote>
+              <p>"Confiamos en su criterio con los ojos cerrados. Demuestran su pasión y amor por los animales."</p>
+              <cite>— Denia R.</cite>
+            </blockquote>
+          </div>
+          <div class="gq-slide">
+            <blockquote>
+              <p>"La veterinaria Pilar tiene mucha paciencia e invierte todo el tiempo que haga falta."</p>
+              <cite>— Emma P.</cite>
+            </blockquote>
+          </div>
+        </div>
+        <div class="gq-dots" aria-hidden="true">
+          <div class="gq-dot active"></div>
+          <div class="gq-dot"></div>
+          <div class="gq-dot"></div>
+          <div class="gq-dot"></div>
+        </div>
+      </figure>
+      <figure class="g4">
+        <img src="assets/consulta.png" alt="Sala de consulta" />
+        <figcaption><span lang="ca">Sala de consulta</span><span lang="es">Sala de consulta</span></figcaption>
+      </figure>
+      <figure class="g5">
+        <img src="assets/laboratori.png" alt="Laboratori" />
+        <figcaption><span lang="ca">Laboratori IDEXX</span><span lang="es">Laboratorio IDEXX</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============= SCHEDULE ============= -->
+<section class="schedule" id="horari">
+  <div class="container">
+    <div class="schedule-grid">
+      <div>
+        <span class="section-eyebrow"><span lang="ca">Horari</span><span lang="es">Horario</span></span>
+        <h2><span lang="ca">Et veiem aviat.</span><span lang="es">Nos vemos pronto.</span></h2>
+        <p>
+          <span lang="ca">Treballem amb visita concertada per dedicar-li tot el temps que necessiti. Si és una urgència, truca'ns i t'atendrem al moment.</span>
+          <span lang="es">Trabajamos con visita concertada para dedicarle todo el tiempo que necesite. Si es una urgencia, llámanos y te atenderemos al momento.</span>
+        </p>
+        <div class="live-status" id="liveStatus">
+          <span class="status-dot"></span>
+          <span id="liveText"></span>
+          <small id="liveNext"></small>
+        </div>
+      </div>
+
+      <div class="hours-table" id="hoursTable">
+        <div class="hours-row head">
+          <div class="day"></div>
+          <div class="slot" style="grid-column:span 2"><span lang="ca">Horari</span><span lang="es">Horario</span></div>
+        </div>
+        <div class="hours-row" data-day="1">
+          <div class="day"><span lang="ca">Dilluns</span><span lang="es">Lunes</span></div>
+          <div class="slot" data-from="10:00" data-to="20:00" style="grid-column:span 2">10:00 – 20:00</div>
+        </div>
+        <div class="hours-row" data-day="2">
+          <div class="day"><span lang="ca">Dimarts</span><span lang="es">Martes</span></div>
+          <div class="slot" data-from="12:00" data-to="20:00" style="grid-column:span 2">12:00 – 20:00</div>
+        </div>
+        <div class="hours-row" data-day="3">
+          <div class="day"><span lang="ca">Dimecres</span><span lang="es">Miércoles</span></div>
+          <div class="slot" data-from="9:30" data-to="17:30" style="grid-column:span 2">9:30 – 17:30</div>
+        </div>
+        <div class="hours-row" data-day="4">
+          <div class="day"><span lang="ca">Dijous</span><span lang="es">Jueves</span></div>
+          <div class="slot" data-from="12:00" data-to="20:00" style="grid-column:span 2">12:00 – 20:00</div>
+        </div>
+        <div class="hours-row" data-day="5">
+          <div class="day"><span lang="ca">Divendres</span><span lang="es">Viernes</span></div>
+          <div class="slot" data-from="9:30" data-to="17:30" style="grid-column:span 2">9:30 – 17:30</div>
+        </div>
+        <div class="hours-row" data-day="6">
+          <div class="day"><span lang="ca">Dis. &amp; Diu.</span><span lang="es">Sáb. y Dom.</span></div>
+          <div class="slot closed" style="grid-column:span 2"><span lang="ca">Tancat</span><span lang="es">Cerrado</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= CONTACT ============= -->
+<section class="contact" id="contacte">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <span class="section-eyebrow"><span lang="ca">Contacte</span><span lang="es">Contacto</span></span>
+        <h2><span lang="ca">Vine a veure'ns.</span><span lang="es">Ven a vernos.</span></h2>
+        <p style="color:var(--muted);max-width:38ch;margin-top:8px">
+          <span lang="ca">Estem al carrer Barcelona, just al centre d'Esparreguera. Pàrquing a tocar.</span>
+          <span lang="es">Estamos en la calle Barcelona, justo en el centro de Esparraguera. Parking al lado.</span>
+        </p>
+
+        <div class="contact-list">
+          <a class="contact-item" href="tel:+34618358982">
+            <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div class="ci-text">
+              <small><span lang="ca">Telèfon · WhatsApp</span><span lang="es">Teléfono · WhatsApp</span></small>
+              <div class="ci-label">618 35 89 82</div>
+              <span><span lang="ca">Truca'ns per concertar visita</span><span lang="es">Llámanos para concertar visita</span></span>
+            </div>
+          </a>
+          <a class="contact-item" href="https://maps.google.com/?q=Carrer+Barcelona+55+Esparraguera" target="_blank" rel="noopener">
+            <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div class="ci-text">
+              <small><span lang="ca">Adreça</span><span lang="es">Dirección</span></small>
+              <div class="ci-label">C. Barcelona 55, local B</div>
+              <span>08292 Esparraguera, Barcelona</span>
+            </div>
+          </a>
+          <a class="contact-item" href="https://instagram.com/animalsclinicaveterinaria" target="_blank" rel="noopener">
+            <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+            <div class="ci-text">
+              <small>Instagram</small>
+              <div class="ci-label">@animalsclinicaveterinaria</div>
+              <span><span lang="ca">Segueix-nos al dia a dia de la clínica</span><span lang="es">Síguenos el día a día de la clínica</span></span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="map-card">
+        <iframe
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Carrer+Barcelona+55+Esparraguera&output=embed">
+        </iframe>
+        <div class="pin-overlay">
+          <div>
+            <strong>Animals · Clínica Veterinària</strong>
+            <small>C. Barcelona 55, local B · 08292 Esparraguera</small>
+          </div>
+          <a href="https://maps.google.com/?q=Carrer+Barcelona+55+Esparraguera" target="_blank" rel="noopener" class="btn">
+            <span lang="ca">Obrir al mapa</span><span lang="es">Abrir en el mapa</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= CTA BAND ============= -->
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-band-inner">
+      <h2>
+        <span lang="ca">La teva mascota es mereix temps i atenció de debò.</span>
+        <span lang="es">Tu mascota se merece tiempo y atención de verdad.</span>
+      </h2>
+      <a href="tel:+34618358982" class="btn btn-green">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span lang="ca">Demanar visita ara</span><span lang="es">Pedir visita ahora</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a href="#top" class="brand" style="text-decoration:none">
+          <div class="brand-mark">A</div>
+          <div class="brand-text">
+            <strong>animals</strong>
+            <span lang="ca">clínica veterinària</span>
+            <span lang="es">clínica veterinaria</span>
+          </div>
+        </a>
+        <p class="footer-tagline">
+          <span lang="ca">Cuidem animals, acompanyem famílies.</span>
+          <span lang="es">Cuidamos animales, acompañamos familias.</span>
+        </p>
+      </div>
+      <div class="footer-col">
+        <span class="footer-section-label"><span lang="ca">Contacte</span><span lang="es">Contacto</span></span>
+        <a href="tel:+34618358982">618 35 89 82</a>
+        <a href="https://instagram.com/animalsclinicaveterinaria" target="_blank" rel="noopener">@animalsclinicaveterinaria</a>
+        <a href="https://maps.google.com/?q=Carrer+Barcelona+55+Esparraguera" target="_blank" rel="noopener">C. Barcelona 55, local B · Esparreguera</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-section-label"><span lang="ca">Navegació</span><span lang="es">Navegación</span></span>
+        <a href="#sobre"><span lang="ca">Sobre nosaltres</span><span lang="es">Nosotras</span></a>
+        <a href="#serveis"><span lang="ca">Serveis</span><span lang="es">Servicios</span></a>
+        <a href="#horari"><span lang="ca">Horari</span><span lang="es">Horario</span></a>
+        <a href="#contacte"><span lang="ca">Contacte</span><span lang="es">Contacto</span></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>© <span id="year">2026</span> Animals Clínica Veterinària · Esparreguera</small>
+      <small style="color:var(--muted)">
+        <span lang="ca">Col·legi Oficial de Veterinaris de Barcelona</span>
+        <span lang="es">Colegio Oficial de Veterinarios de Barcelona</span>
+      </small>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---------- Language toggle ---------- */
+(function(){
+  const saved = localStorage.getItem('avet-lang') || 'ca';
+  document.documentElement.lang = saved;
+  document.querySelectorAll('.lang button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.lang===saved);
+    b.addEventListener('click',()=>{
+      const l=b.dataset.lang;
+      document.documentElement.lang=l;
+      localStorage.setItem('avet-lang',l);
+      document.querySelectorAll('.lang button').forEach(x=>x.classList.toggle('active',x.dataset.lang===l));
+    });
+  });
+})();
+
+/* ---------- Sticky nav shadow ---------- */
+(function(){
+  const nav=document.getElementById('nav');
+  const onScroll=()=>nav.classList.toggle('scrolled', window.scrollY>8);
+  document.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+})();
+
+/* ---------- Year ---------- */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ---------- Open / closed status ---------- */
+(function(){
+  // schedule: dayIndex (1=Mon..7=Sun) -> [ [from,to], [from,to] ] minutes
+  const toMin = (s)=>{const [h,m]=s.split(':').map(Number);return h*60+m};
+  const schedule = {
+    1: [[toMin("10:00"),toMin("20:00")], null],
+    2: [[toMin("12:00"),toMin("20:00")], null],
+    3: [[toMin("9:30"), toMin("17:30")], null],
+    4: [[toMin("12:00"),toMin("20:00")], null],
+    5: [[toMin("9:30"), toMin("17:30")], null],
+    6: [null,null],
+    7: [null,null]
+  };
+  const dayNamesCA = ['','dilluns','dimarts','dimecres','dijous','divendres','dissabte','diumenge'];
+  const dayNamesES = ['','lunes','martes','miércoles','jueves','viernes','sábado','domingo'];
+  const fmt = (m)=>`${String(Math.floor(m/60)).padStart(2,'0')}:${String(m%60).padStart(2,'0')}`;
+
+  function compute(now){
+    const dayJS = now.getDay(); // 0=Sun..6=Sat
+    const day = dayJS===0 ? 7 : dayJS;
+    const minNow = now.getHours()*60 + now.getMinutes();
+    const slots = schedule[day] || [null,null];
+    // currently open?
+    for (let i=0;i<2;i++){
+      if (slots[i] && minNow>=slots[i][0] && minNow<slots[i][1]){
+        return {open:true, day, slotIdx:i, until:slots[i][1]};
+      }
+    }
+    // find next open
+    for (let offset=0; offset<8; offset++){
+      const d = ((day-1+offset)%7)+1;
+      const ss = schedule[d];
+      for (let i=0;i<2;i++){
+        if (ss[i]){
+          if (offset===0 && ss[i][0]<=minNow) continue;
+          return {open:false, nextDay:d, nextFrom:ss[i][0]};
+        }
+      }
+    }
+    return {open:false};
+  }
+
+  function render(){
+    const now = new Date();
+    const st = compute(now);
+    const dot = document.getElementById('heroDot');
+    const heroStatus = document.getElementById('heroStatus');
+    const live = document.getElementById('liveStatus');
+    const liveText = document.getElementById('liveText');
+    const liveNext = document.getElementById('liveNext');
+
+    if (st.open){
+      dot.classList.remove('closed');
+      live.classList.remove('closed');
+      heroStatus.innerHTML = `<span lang="ca">Oberts ara · Esparreguera</span><span lang="es">Abiertos ahora · Esparraguera</span>`;
+      liveText.innerHTML = `<span lang="ca">Oberts · fins les ${fmt(st.until)}</span><span lang="es">Abiertos · hasta las ${fmt(st.until)}</span>`;
+      liveNext.textContent = '';
+    } else {
+      dot.classList.add('closed');
+      live.classList.add('closed');
+      heroStatus.innerHTML = `<span lang="ca">Tancats ara · Esparreguera</span><span lang="es">Cerrados ahora · Esparraguera</span>`;
+      if (st.nextDay){
+        const sameDay = st.nextDay === (now.getDay()===0?7:now.getDay());
+        liveText.innerHTML = `<span lang="ca">Tancats ara</span><span lang="es">Cerrados ahora</span>`;
+        if (sameDay){
+          liveNext.innerHTML = ` <span lang="ca">· obrim a les ${fmt(st.nextFrom)}</span><span lang="es">· abrimos a las ${fmt(st.nextFrom)}</span>`;
+        } else {
+          liveNext.innerHTML = ` <span lang="ca">· obrim ${dayNamesCA[st.nextDay]} a les ${fmt(st.nextFrom)}</span><span lang="es">· abrimos el ${dayNamesES[st.nextDay]} a las ${fmt(st.nextFrom)}</span>`;
+        }
+      } else {
+        liveText.innerHTML = `<span lang="ca">Tancats</span><span lang="es">Cerrados</span>`;
+      }
+    }
+
+    // highlight today row + currently-open slot
+    document.querySelectorAll('.hours-row[data-day]').forEach(row=>{
+      row.classList.remove('today');
+      row.querySelectorAll('.slot').forEach(s=>s.classList.remove('now'));
+    });
+    // sat/sun → row data-day="6"
+    const dayJS = now.getDay();
+    const day = dayJS===0?7:dayJS;
+    let todayRow;
+    if (day<=5) todayRow = document.querySelector(`.hours-row[data-day="${day}"]`);
+    else todayRow = document.querySelector(`.hours-row[data-day="6"]`);
+    if (todayRow){
+      todayRow.classList.add('today');
+      if (st.open && day<=5){
+        todayRow.querySelectorAll('.slot')[st.slotIdx]?.classList.add('now');
+      }
+    }
+  }
+  render();
+  setInterval(render, 60000);
+})();
+
+/* ---------- Gallery reviews slideshow ---------- */
+(function(){
+  var slides = document.querySelectorAll('.gq-slide');
+  var dots   = document.querySelectorAll('.gq-dot');
+  if(!slides.length) return;
+  var idx = 0;
+  setInterval(function(){
+    slides[idx].classList.remove('active');
+    dots[idx].classList.remove('active');
+    idx = (idx + 1) % slides.length;
+    slides[idx].classList.add('active');
+    dots[idx].classList.add('active');
+  }, 4500);
+})();
+
+/* ---------- Vet card flip ---------- */
+(function(){
+  document.querySelectorAll('.vet-wrapper').forEach(function(wrapper){
+    wrapper.addEventListener('click', function(){
+      wrapper.classList.toggle('flipped');
+    });
+  });
+  // para la animación de hint: se detiene permanentemente tras el primer clic
+  var pilar = document.querySelector('.vet-wrapper.pilar');
+  if(pilar){
+    pilar.addEventListener('click', function(){
+      pilar.classList.add('hint-done');
+    }, {once:true});
+  }
+})();
+
+/* ---------- Mobile nav toggle ---------- */
+(function(){
+  var toggle = document.getElementById('menuToggle');
+  var navLinks = document.querySelector('.nav-links');
+  if(!toggle || !navLinks) return;
+  toggle.addEventListener('click', function(){
+    var open = navLinks.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      navLinks.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    });
+  });
+  document.addEventListener('click', function(e){
+    if(!toggle.contains(e.target) && !navLinks.contains(e.target)){
+      navLinks.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+
+/* ---------- Scroll reveal ---------- */
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  const sections = document.querySelectorAll('.trust,.about,.services,.gallery,.schedule,.contact,.cta-band');
+  const io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.08, rootMargin:'0px 0px -32px 0px'});
+  sections.forEach(function(el){ el.classList.add('reveal'); io.observe(el); });
+})();
+</script>
+
+</body>
+</html>
